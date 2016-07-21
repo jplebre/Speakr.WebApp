@@ -13,14 +13,14 @@ namespace Speakr.WebApp.Site.Migrations
                 name: "UserDetails",
                 columns: table => new
                 {
-                    UserId = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     FirstName = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserDetails", x => x.UserId);
+                    table.PrimaryKey("PK_UserDetails", x => x.Id);
                 });
         }
 

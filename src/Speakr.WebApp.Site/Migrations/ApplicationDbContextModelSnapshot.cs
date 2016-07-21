@@ -18,14 +18,14 @@ namespace Speakr.WebApp.Site.Migrations
 
             modelBuilder.Entity("Speakr.WebApp.Site.Infrastructure.Database.UserDetails", b =>
                 {
-                    b.Property<int>("UserId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("FirstName");
 
                     b.Property<string>("LastName");
 
-                    b.HasKey("UserId");
+                    b.HasKey("Id");
 
                     b.ToTable("UserDetails");
                 });

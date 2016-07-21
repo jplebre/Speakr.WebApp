@@ -8,7 +8,7 @@ using Speakr.WebApp.Site.Infrastructure.Database;
 namespace Speakr.WebApp.Site.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20160721215319_v1")]
+    [Migration("20160721223522_v1")]
     partial class v1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -19,14 +19,14 @@ namespace Speakr.WebApp.Site.Migrations
 
             modelBuilder.Entity("Speakr.WebApp.Site.Infrastructure.Database.UserDetails", b =>
                 {
-                    b.Property<int>("UserId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("FirstName");
 
                     b.Property<string>("LastName");
 
-                    b.HasKey("UserId");
+                    b.HasKey("Id");
 
                     b.ToTable("UserDetails");
                 });

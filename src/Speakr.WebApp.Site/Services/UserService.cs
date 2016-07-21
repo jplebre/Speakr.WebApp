@@ -23,7 +23,7 @@ namespace Speakr.WebApp.Site.Services
 
         public UserDetails GetUserById(int id)
         {
-            return _dbContext.UserDetails.FirstOrDefault(u => u.UserId == id);
+            return _dbContext.UserDetails.FirstOrDefault(u => u.Id == id);
         }
 
         public List<UserDetails> GetAll()
