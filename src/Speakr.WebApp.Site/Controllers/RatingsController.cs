@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 
 namespace Speakr.WebApp.Site.Controllers
@@ -7,6 +8,7 @@ namespace Speakr.WebApp.Site.Controllers
     public class RatingsController : Controller
     {
         [Route("DisplayForm")]
+        [Authorize]
         public IActionResult DisplayForm(int talkId)
         {
             return Content("Display Form " + talkId);

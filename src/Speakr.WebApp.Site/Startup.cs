@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Speakr.WebApp.Site.DTO;
 using Speakr.WebApp.Site.Infrastructure.Database;
-using Speakr.WebApp.Site.Services;
 using System.IO;
 
 namespace Speakr.WebApp
@@ -30,7 +30,10 @@ namespace Speakr.WebApp
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration["ConnectionStrings:databaseConnection"]));
 
-            services.AddScoped<IUserService, UserService>();
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddSingleton(provider => Configuration);
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -41,6 +44,8 @@ namespace Speakr.WebApp
             }
 
             app.UseFileServer();
+
+            app.UseIdentity();
 
             app.UseMvc();
         }
