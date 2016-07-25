@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Speakr.WebApp.Site.Infrastructure;
 using System.IO;
 
 namespace Speakr.WebApp
@@ -32,6 +33,7 @@ namespace Speakr.WebApp
             }
 
             app.UseFileServer();
+            app.UseNodeModules(env);
 
             app.UseMvc();
         }

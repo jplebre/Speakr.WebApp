@@ -1,11 +1,14 @@
-﻿@using (Html.BeginForm("GetRatingForm", "Home", FormMethod.Get))
+﻿<section class="panel panel-default">
+@using (Html.BeginForm("GetRatingForm", "Home", FormMethod.Get))
 {
+    <div class="panel-heading">Help rate our speakers!</div>
+    <div class="panel-body">Rating our speakers helps the community</div>
+
     <div>
-        @Html.Label("Talk Id:")
+        @Html.Label("talkId","Talk Id:", new { @class = "control-label text-left" })
         @Html.Editor("talkId")
         @Html.ValidationMessage("InvalidTalkId")
-    </div>
-    <div>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" class="btn btn-default">
     </div>
 }
+    </section>
