@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "name": "speakr.webapp",
+  "private": true,
+  "devDependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap": "^3.3.7",
+    "fontawesome": "^4.7.2",
+    "webpack": "^2.3.2"
+  }
+}
